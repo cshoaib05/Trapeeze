@@ -15,5 +15,4 @@ public class Activator1 : MonoBehaviour
         }
     }
 
-
 }

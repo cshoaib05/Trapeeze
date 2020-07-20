@@ -8,6 +8,7 @@ public class Pendullum : MonoBehaviour
     
     public static int indexinplay;
     public GameObject flyer;
+    public GameObject activator;
     private void Start()
     {
          rb =transform.parent.gameObject.GetComponent<Rigidbody>();
@@ -23,11 +24,18 @@ public class Pendullum : MonoBehaviour
 
             if (Input.GetMouseButtonUp(0))
             {
-                flyer.transform.position = transform.position;
-                flyer.SetActive(true);
-                flyer.GetComponent<Rigidbody>().AddForce(transform.forward * 600f);
-                gameObject.SetActive(false);
+                StartCoroutine(changeTrapeeze());
             }
         
+    }
+
+    IEnumerator changeTrapeeze()
+    {
+        flyer.transform.position = transform.position;
+        flyer.SetActive(true);
+        flyer.GetComponent<Rigidbody>().AddForce(transform.forward * 600f);
+        gameObject.SetActive(false);
+        yield return new WaitForSeconds(2f);
+
     }
 }
