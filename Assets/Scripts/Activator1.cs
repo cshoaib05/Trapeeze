@@ -10,8 +10,10 @@ public class Activator1 : MonoBehaviour
         if (other.gameObject.CompareTag("flyer"))
         {
             print("Adsasd");
+            other.GetComponent<Rigidbody>().velocity = Vector3.zero;
             other.gameObject.SetActive(false);
             player.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 

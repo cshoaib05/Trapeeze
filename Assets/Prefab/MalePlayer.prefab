@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flyer: {fileID: 0}
+  activator: {fileID: 0}
 --- !u!1 &773264160786871515
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,7 +2085,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4597107667637640440, guid: 277ca9165e3972f4f8b160f94dfb3268, type: 3}
+  - {fileID: 2100000, guid: f969ad0a26c60874cbb4693e641b98c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
