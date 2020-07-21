@@ -22,19 +22,18 @@ public class Pendullum : MonoBehaviour
 
     private void Update()
     {
-            if (Input.GetMouseButton(0))
-            {
-                rb.AddForce(new Vector3(transform.forward.x * 10f, 0, 0));
-            }
+        if (Input.GetMouseButton(0))
+        {
+            rb.AddForce(new Vector3(transform.forward.x * 10f, 0, 0));
+        }
 
-            if (Input.GetMouseButtonUp(0))
-            {
-                flyer.transform.position = transform.position;
-                flyer.transform.rotation = flyerRot;
-                flyer.SetActive(true);
-                flyer.GetComponent<Rigidbody>().AddForce(transform.forward * 600f);
-                gameObject.SetActive(false);
-                ScoreController.SetActive(false);
-            }
+        if (Input.GetMouseButtonUp(0))
+        {
+            flyer.transform.position = transform.position;
+            flyer.SetActive(true);
+            flyer.GetComponent<Rigidbody>().AddForce(transform.forward * 600f);
+            gameObject.SetActive(false);
+            ScoreController.SetActive(false);
+        }
     }
 }
