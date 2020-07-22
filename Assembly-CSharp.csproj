@@ -65,7 +65,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Activator1.cs" />
     <Compile Include="Assets\Scripts\Activator2.cs" />
-    <Compile Include="Assets\Scripts\CamPos.cs" />
     <Compile Include="Assets\Scripts\Pendullum.cs" />
     <Compile Include="Assets\Scripts\ReversePlayer.cs" />
     <Compile Include="Assets\Scripts\ScorePopUp.cs" />

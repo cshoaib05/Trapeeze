@@ -5,15 +5,11 @@ using UnityEngine;
 public class Activator1 : MonoBehaviour
 {
     public GameObject player;
-    public Transform flyerrot;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("flyer"))
         {
-            print("Adsasd");
-            other.GetComponent<Rigidbody>().velocity = Vector3.zero;
             other.gameObject.SetActive(false);
-            other.transform.rotation = flyerrot.rotation;
             player.SetActive(true);
             gameObject.SetActive(false);
         }
