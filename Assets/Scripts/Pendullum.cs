@@ -33,13 +33,14 @@ public class Pendullum : MonoBehaviour
         {
             gameObject.AddComponent<Rigidbody>();
             gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 500f);
-            gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(0,0,transform.forward.z *20f));
+            //gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(0,0,transform.forward.z *20f));
             ScoreController.SetActive(false);
         }
 
 
         tempos = transform.position;
         tempos.z = transform.position.z - offset;
-        camera.transform.position = tempos;
+        tempos.x = transform.position.x + 2f;
+        camera.transform.position = Vector3.MoveTowards(camera.transform.position,tempos,Time.deltaTime * 5f);
     }
 }
