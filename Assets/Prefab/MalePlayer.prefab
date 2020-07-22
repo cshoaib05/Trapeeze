@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 1694468667}
   m_Layer: 0
   m_Name: MalePlayer
-  m_TagString: Player
+  m_TagString: flyer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,8 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e9dad33ca046944b5dc5044cc51132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flyer: {fileID: 0}
-  activator: {fileID: 0}
+  camera: {fileID: 0}
+  ScoreController: {fileID: 0}
 --- !u!1 &773264160786871515
 GameObject:
   m_ObjectHideFlags: 0

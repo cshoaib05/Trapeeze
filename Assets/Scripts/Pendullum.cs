@@ -7,33 +7,39 @@ using TMPro;
 public class Pendullum : MonoBehaviour
 {
     Rigidbody rb;
-    public static int indexinplay;
-    public GameObject flyer;
-    public GameObject activator;
+    public Camera camera;
     public GameObject ScoreController;
-    public Quaternion flyerRot;
+
+    float offset;
+    Vector3 tempos;
 
     private void Start()
     {
-         rb = transform.parent.gameObject.GetComponent<Rigidbody>();
+        camera = Camera.main;
+        offset = transform.position.z - camera.transform.position.z;
+        rb = transform.parent.gameObject.GetComponent<Rigidbody>();
         ScoreController.SetActive(true);
-        flyerRot = flyer.transform.rotation;
+
     }
 
     private void Update()
     {
         if (Input.GetMouseButton(0))
         {
-            rb.AddForce(new Vector3(transform.forward.x * 10f, 0, 0));
+            rb.AddForce(new Vector3(transform.forward.x * 15f, 0, 0));
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            flyer.transform.position = transform.position;
-            flyer.SetActive(true);
-            flyer.GetComponent<Rigidbody>().AddForce(transform.forward * 600f);
-            gameObject.SetActive(false);
+            gameObject.AddComponent<Rigidbody>();
+            gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 500f);
+            gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(0,0,transform.forward.z *20f));
             ScoreController.SetActive(false);
         }
+
+
+        tempos = transform.position;
+        tempos.z = transform.position.z - offset;
+        camera.transform.position = tempos;
     }
 }
